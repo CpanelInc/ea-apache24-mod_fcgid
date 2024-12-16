@@ -17,7 +17,7 @@ Name: %{ns_name}-%{module_name}
 Version: 2.3.9
 Vendor: cPanel, Inc.
 # Doing release_prefix this way for Release allows for OBS-proof versioning, see EA-4560 for more details
-%define release_prefix 12
+%define release_prefix 13
 Release: %{release_prefix}%{?dist}.cpanel
 Group: System Environment/Daemons
 URL: http://httpd.apache.org/mod_fcgid/
@@ -106,6 +106,9 @@ APXS=%{_httpd_apxs} ./configure.apxs
 %endif
 
 %changelog
+* Mon Dec 16 2024 Dan Muey <daniel.muey@webpros.com> - 2.3.9-13
+- ZC-12441: Address deb’s versioned-dir situation
+
 * Wed May 17 2023 Dan Muey <dan@cpanel.net> - 2.3.9-12
 - ZC-10938: Remove DISABLE_DEBUGINFO (and i586 if any) from Makefile, deal w/ debug_package nil
 
